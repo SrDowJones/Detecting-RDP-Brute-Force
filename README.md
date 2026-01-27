@@ -11,4 +11,5 @@ Objective
 
 Tools & Technologies
 1. RDP into VM
-2. Microsoft Defender analytics and alerts page
+2. Windows Security Events
+3. Microsoft Defender analytics and alerts page
