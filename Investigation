@@ -1,1 +1,25 @@
+Status 
+  -In progress
+Assigned to
+  -my email
+Determination
+  -Malicious user activity
 
+Filtered by In progress for the brute force alerts, I am going to investigate.
+
+TimeLine of Events
+  First activity
+    - Jan 27, 2026 5:05:00 AM
+  Last activity
+    - Jan 27, 2026 5:05:00 AM
+
+TimeGenerated
+  Jan 27, 2026 5:05:00 AM
+User
+  -\SERVER
+SrcIP
+  194.180.49.143
+Computer
+  WIN-SOC
+FailedAttempts
+  9
