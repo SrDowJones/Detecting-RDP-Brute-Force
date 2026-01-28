@@ -17,7 +17,7 @@ Ran a query to see if any successful login attempts occurred. (No results found)
     SecurityEvent
     | where EventID == 4624
     | where LogonType == 10
-    | project TimeGenerated, Account, IPAddress, Computer
+    | project TimeGenerated, Account, IpAddress, Computer
     | order by TimeGenerated desc
 
 Further investigation into the Ip <194.180.49.143>
