@@ -1,12 +1,3 @@
-Status 
-  -In progress
-Assigned to
-  -my email
-Determination
-  -Malicious user activity
-
-Filtered by In progress for the brute force alerts, I am going to investigate.
-
 TimeLine of Events
   First activity
     - Jan 27, 2026 5:05:00 AM
@@ -23,11 +14,11 @@ TimeGenerated                  User              SrcIP              Computer    
 All failed attempts came from the same ip address. 
 
 Ran a query to see if any successful login attempts occurred. (No results found)
-SecurityEvent
-| where EventID == 4624
-| where LogonType == 10
-| project TimeGenerated, Account, IPAddress, Computer
-| order by TimeGenerated desc
+    SecurityEvent
+    | where EventID == 4624
+    | where LogonType == 10
+    | project TimeGenerated, Account, IPAddress, Computer
+    | order by TimeGenerated desc
 
 Further investigation into the Ip <194.180.49.143>
   AbuseIPDB
