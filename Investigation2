@@ -15,4 +15,7 @@ Ran a query to see if any successful login attempts occurred. (No results found)
     | project TimeGenerated, Account, IPAddress, Computer
     | order by TimeGenerated desc
 
+Further investigation into the Ip <49.231.30.4>
+
+
 
