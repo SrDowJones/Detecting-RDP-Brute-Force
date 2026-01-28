@@ -13,13 +13,45 @@ TimeLine of Events
   Last activity
     - Jan 27, 2026 5:05:00 AM
 
-TimeGenerated
-  Jan 27, 2026 5:05:00 AM
-User
-  -\SERVER
-SrcIP
-  194.180.49.143
-Computer
-  WIN-SOC
-FailedAttempts
-  9
+TimeGenerated                  User              SrcIP              Computer    FailedAttempts
+  Jan 27, 2026 5:05:00 AM    -\SERVER            194.180.49.143     WIN-SOC     9
+                             -\MANAGER  
+                             -\ADMINISTARTOR
+                             -\ADMIN
+                             -\USER
+
+All failed attempts came from the same ip address. 
+
+Ran a query to see if any successful login attempts occurred. (No results found)
+SecurityEvent
+| where EventID == 4624
+| where LogonType == 10
+| project TimeGenerated, Account, IPAddress, Computer
+| order by TimeGenerated desc
+
+Further investigation into the Ip <194.180.49.143>
+  AbuseIPDB
+    -City = Warsaw, Mazovia
+    -Country = Poland
+    -Domain Name = neterra.net 
+    -Usage Type = Data Center/Web Hosting/Transit
+According to recent reports ip is potentially still actively engaged in abusive activites 
+
+  Whois.domaintools
+    -IP Location = Germany Berngau Razi Network
+    -ASN = AS201814 Mevspace MEVSPACE sp. z o.o., PL (registered Jul 03, 2014)
+
+VirusTotal
+  -Fortinet = Malware
+  -AlphaSOC = Supicious
+  -SOCRadar = Malware
+
+Conclusion
+  -No successful RDP authentication
+  -Attack unsuccessful
+  -VM remained uncompromised
+  -IP is malicious
+
+
+
+
