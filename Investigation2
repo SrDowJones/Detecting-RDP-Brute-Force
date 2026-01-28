@@ -8,4 +8,11 @@ TimeGenerated                     User                SrcIP          Computer   
   Jan 27, 2026 11:50:00 AM      -\Admin            49.231.30.4        WIN-SOC          5
   Jan 27, 2026 11:50:00 AM      -\Administrator    202.28.201.22      WIN-SOC          5
 
+Ran a query to see if any successful login attempts occurred. (No results found)
+    SecurityEvent
+    | where EventID == 4624
+    | where LogonType == 10
+    | project TimeGenerated, Account, IPAddress, Computer
+    | order by TimeGenerated desc
+
 
