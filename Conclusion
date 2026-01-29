@@ -1,1 +1,27 @@
-asd
+Following a detailed investigation of the Microsoft Sentinel alerts, it was confirmed that no unauthorized access was successfully achieved 
+through the observed RDP brute-force activity. All authentication attempts resulted in failed logon events, and the virtual machine remained uncompromised 
+throughout the duration of the attack.
+
+To further strengthen the security posture of the environment, several defensive improvements are recommended. 
+These include implementing network-level firewall controls for the virtual network and enabling Microsoft Defender for Cloud 
+to provide enhanced threat protection and continuous security monitoring.
+
+As an additional hardening measure, Just-In-Time (JIT) virtual machine access through Microsoft Defender for Cloud. 
+JIT access would restrict inbound RDP traffic by default and allow access only when explicitly requested and approved, 
+significantly reducing the attack surface and mitigating future brute-force attempts.
+
+
+Additional Notes
+  - using this KQL
+        SecurityEvent
+        | where EventID == 4625
+        | where TargetAccount contains "admin"
+        | summarize count() by TargetAccount, Computer
+
+The most targeted accounts from all my alerts
+  1. ADMIN count_ 1219
+  2  USER  count_ 1139
+  3. ADMINISTRATOR  count_ 707
+  4. SERVER count_ 518
+  5. ADMINISTARTOR  count_ 512
+  5. MANAGER count_ 512
