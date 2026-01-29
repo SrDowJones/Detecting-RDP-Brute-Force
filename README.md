@@ -20,3 +20,6 @@ For this project, a subset of these alerts was selected and investigated in deta
 
 Detection Source
 Microsoft Sentinel analytics rules identified abnormal authentication patterns consistent with RDP brute-force activity targeting the virtual machine. The alerts were generated based on repeated failed logon attempts originating from external IP addresses.
+
+
+I am not an SOC Analyst, but would love to be one! 
